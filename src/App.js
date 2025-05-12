@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
-import Donghyun from "./assignments/donghyun";
+import TodoList from "./assignments/donghyun";
 
 function NavigateToDongHyun() {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<NavigateToDongHyun />} />
-        <Route path="/donghyun" element={<Donghyun />} />
+        <Route path="/donghyun" element={<TodoList />} />
       </Routes>
     </Router>
   );

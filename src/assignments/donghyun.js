@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function App() {
+function TodoList() {
   // 과제1-1: 7-1, 7-2강을 듣고 이곳에 투두리스트 컴포넌트를 작성해주세요.
   const [toDo, setToDo] = useState("");
   const [toDos, setToDos] = useState([]);
@@ -60,4 +60,4 @@ function App() {
   );
 }
 
-export default App;
+export default TodoList;
