@@ -2,25 +2,25 @@ import { useState, useEffect } from "react";
 
 function TodoList() {
   // 과제1-1: 7-1, 7-2강을 듣고 이곳에 투두리스트 컴포넌트를 작성해주세요.
-  const [toDo, setToDo] = useState("");
+  const [toDoItem, setToDoItem] = useState("");
   const [toDos, setToDos] = useState([]);
   const [id, setId] = useState(0);
 
-  const onChange = (event) => setToDo(event.target.value);
+  const onChange = (event) => setToDoItem(event.target.value);
 
   const onSubmit = (event) => {
     event.preventDefault();
-    if (toDo === "") {
+    if (toDoItem.trim === "") {
       return;
     }
-    const newItem = { id: id, todo: toDo };
+    const newItem = { id: id, todo: toDoItem };
     const newToDos = [newItem, ...toDos];
     setToDos(newToDos);
     setId(id + 1);
 
     localStorage.setItem("savedToDos", JSON.stringify(newToDos));
     localStorage.setItem("newId", id + 1);
-    setToDo("");
+    setToDoItem("");
   };
 
   const deleteToDo = (selectedId) => {
@@ -44,7 +44,7 @@ function TodoList() {
     <div>
       <h1>My To Dos ({toDos.length})</h1>
       <form onSubmit={onSubmit}>
-        <input onChange={onChange} value={toDo} type="text" />
+        <input onChange={onChange} value={toDoItem} type="text" />
         <button>Add To Do</button>
       </form>
       <hr />
